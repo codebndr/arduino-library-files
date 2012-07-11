@@ -11,7 +11,7 @@ That way, you can still access your sketches safely even if your laptop is stole
 Currently codebender.cc is running its beta and we are trying to fix issues that may (will) come up so that we can launch and offer our services to everyone!
 If you like what we do you can also support our campaign on [indiegogo](http://www.indiegogo.com/codebender) to also get early access to codebender! 
 
-## How does these "arduino-files" come into the picture?
+## How do these "arduino-files" come into the picture?
 
 codebender.cc runs on PHP Fog, a PaaS that helps us run our PHP projects in a fast and scallable manner. However, we need to run our compiler on some VPS.
 
