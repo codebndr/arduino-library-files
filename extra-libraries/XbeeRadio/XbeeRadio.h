@@ -6,7 +6,7 @@
 #ifndef XbeeRadio_h
 #define XbeeRadio_h
 
-#include <Xbee.h>
+#include <XBee.h>
 #include "Arduino.h"
 
 #ifdef DEBUG
