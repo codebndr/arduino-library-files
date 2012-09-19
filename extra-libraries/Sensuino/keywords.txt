@@ -1,0 +1,11 @@
+SensuinoSerial	KEYWORD1
+SensuinoEth	KEYWORD1
+SenseData	KEYWORD1
+init		KEYWORD2
+setSenseKey	KEYWORD2
+getSense	KEYWORD2
+postSense	KEYWORD2
+longPollSense	KEYWORD2
+longPollCheck	KEYWORD2
+getLastFeedId 	KEYWORD2
+getLastValue	KEYWORD2
