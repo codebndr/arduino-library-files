@@ -270,7 +270,10 @@ private:
   }                                                          \
   static uint16_t read##name(SOCKET _s) {                    \
     uint16_t res = readSn(_s, address);                      \
-    res = (res << 8) + readSn(_s, address + 1);              \
+    uint16_t res2 = readSn(_s,address + 1);                  \
+    res = res << 8;                                          \
+    res2 = res2 & 0xFF;                                      \
+    res = res | res2;                                        \
     return res;                                              \
   }
 #define __SOCKET_REGISTER_N(name, address, size)             \
@@ -324,7 +327,11 @@ private:
   inline static void initSS()    { DDRB  |=  _BV(4); };
   inline static void setSS()     { PORTB &= ~_BV(4); };
   inline static void resetSS()   { PORTB |=  _BV(4); };
-#elif defined(__AVR_ATmega32U4__) || defined(__AVR_AT90USB1286__) || defined(__AVR_AT90USB646__) || defined(__AVR_AT90USB162__)
+#elif defined(__AVR_ATmega32U4__)
+  inline static void initSS()    { DDRB  |=  _BV(6); };
+  inline static void setSS()     { PORTB &= ~_BV(6); };
+  inline static void resetSS()   { PORTB |=  _BV(6); }; 
+#elif defined(__AVR_AT90USB1286__) || defined(__AVR_AT90USB646__) || defined(__AVR_AT90USB162__)
   inline static void initSS()    { DDRB  |=  _BV(0); };
   inline static void setSS()     { PORTB &= ~_BV(0); };
   inline static void resetSS()   { PORTB |=  _BV(0); }; 
